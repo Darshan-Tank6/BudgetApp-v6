@@ -419,9 +419,9 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Finance Tracker'),
-      ),
+      // appBar: AppBar(
+      //   title: Text('Finance Tracker'),
+      // ),
       body: _pages[_selectedIndex], // Display the selected page
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
@@ -456,7 +456,7 @@ class _MainScreenState extends State<MainScreen> {
         ],
       ),
       floatingActionButton: SpeedDial(
-        animatedIcon: AnimatedIcons.menu_close,
+        animatedIcon: AnimatedIcons.menu_home,
         backgroundColor: Colors.purpleAccent.withOpacity(0.8),
         children: [
           SpeedDialChild(

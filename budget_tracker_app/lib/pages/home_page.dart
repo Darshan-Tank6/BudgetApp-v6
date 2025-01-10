@@ -55,6 +55,9 @@ class _HomePageState extends State<HomePage> {
         }
         final totalIncome = snapshot.data ?? 0.0;
         return Scaffold(
+          appBar: AppBar(
+            title: Text('Finance Tracker'),
+          ),
           // appBar: AppBar(
           //   title: Text('Budget Tracker'),
           // ),

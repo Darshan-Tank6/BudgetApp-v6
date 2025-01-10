@@ -148,54 +148,91 @@ class _ExpensePageState extends State<ExpensePage> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
-            SizedBox(
-              child: new Center(
-                  child: new Text("Expenses", textAlign: TextAlign.center,
-                    style: new TextStyle(
-                      fontSize: 20.0,
-                    ),
-                  )
-              ),
-            ),
+            //SizedBox(height: 20),
+            // SizedBox(
+            //   child: new Center(
+            //       child: new Text("Expenses", textAlign: TextAlign.center,
+            //         style: new TextStyle(
+            //           fontSize: 20.0,
+            //         ),
+            //       )
+            //   ),
+            // ),
             // ElevatedButton(
             //   onPressed: _dbHelper.clearAllExpenses,
             //   child: Text('Clear all Expense'),
             // ),
-            Expanded(
-              child: FutureBuilder<List<Expense>>(
-                future: _dbHelper.getExpenses(),
-                builder: (context, snapshot) {
-                  if (!snapshot.hasData) return CircularProgressIndicator();
-                  final expenses = snapshot.data!;
-                  return ListView.builder(
-                    itemCount: expenses.length,
-                    itemBuilder: (context, index) {
-                      final expense = expenses[index];
-                      return ListTile(
-                        title: Text(expense.name),
-                        subtitle: Text('${expense.amount} (${expense
-                            .type}) ${expense.date}'),
-                        trailing: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            IconButton(
-                              icon: Icon(Icons.edit),
-                              onPressed: () => _editExpense(expense),
-                            ),
-                            IconButton(
-                              icon: Icon(Icons.delete),
-                              onPressed: () =>
-                                  _deleteExpense(expense.id!, expense.amount!),
-                            ),
-                          ],
-                        ),
-                      );
-                    },
-                  );
-                },
-              ),
-            ),
+
+
+            // Flexible(
+            //   child: FutureBuilder<List<Expense>>(
+            //     future: _dbHelper.getExpenses(),
+            //     builder: (context, snapshot) {
+            //       if (!snapshot.hasData) return CircularProgressIndicator();
+            //       final expenses = snapshot.data!;
+            //       return ListView.builder(
+            //         itemCount: expenses.length,
+            //         itemBuilder: (context, index) {
+            //           final expense = expenses[index];
+            //           return ListTile(
+            //             title: Text(expense.name),
+            //             subtitle: Text('${expense.amount} (${expense
+            //                 .type}) ${expense.date}'),
+            //             trailing: Row(
+            //               mainAxisSize: MainAxisSize.min,
+            //               children: [
+            //                 IconButton(
+            //                   icon: Icon(Icons.edit),
+            //                   onPressed: () => _editExpense(expense),
+            //                 ),
+            //                 IconButton(
+            //                   icon: Icon(Icons.delete),
+            //                   onPressed: () =>
+            //                       _deleteExpense(expense.id!, expense.amount!),
+            //                 ),
+            //               ],
+            //             ),
+            //           );
+            //         },
+            //       );
+            //     },
+            //   ),
+            // ),
+
+            // Expanded(
+            //   child: FutureBuilder<List<Expense>>(
+            //     future: _dbHelper.getExpenses(),
+            //     builder: (context, snapshot) {
+            //       if (!snapshot.hasData) return CircularProgressIndicator();
+            //       final expenses = snapshot.data!;
+            //       return ListView.builder(
+            //         itemCount: expenses.length,
+            //         itemBuilder: (context, index) {
+            //           final expense = expenses[index];
+            //           return ListTile(
+            //             title: Text(expense.name),
+            //             subtitle: Text('${expense.amount} (${expense
+            //                 .type}) ${expense.date}'),
+            //             trailing: Row(
+            //               mainAxisSize: MainAxisSize.min,
+            //               children: [
+            //                 IconButton(
+            //                   icon: Icon(Icons.edit),
+            //                   onPressed: () => _editExpense(expense),
+            //                 ),
+            //                 IconButton(
+            //                   icon: Icon(Icons.delete),
+            //                   onPressed: () =>
+            //                       _deleteExpense(expense.id!, expense.amount!),
+            //                 ),
+            //               ],
+            //             ),
+            //           );
+            //         },
+            //       );
+            //     },
+            //   ),
+            // ),
           ],
         ),
       ),
